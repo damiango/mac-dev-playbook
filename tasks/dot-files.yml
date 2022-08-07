@@ -1,0 +1,12 @@
+---
+- name: vim config
+  ansible.builtin.copy:
+    src: files/dotfiles/vimrc
+    dest: ~/.vimrc
+    mode: '0644'
+
+- name: git config
+  ansible.builtin.copy:
+    src: files/dotfiles/gitconfig
+    dest: ~/.gitconfig
+    mode: '0644'

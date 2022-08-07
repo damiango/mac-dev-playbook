@@ -45,6 +45,18 @@
       when: configure_sublime
       tags: ['sublime-text']
 
+    - import_tasks: tasks/oh-my-zsh.yml
+      tags: ['oh-my-zsh']
+
+    - import_tasks: tasks/vscode.yml
+      tags: ['vscode']
+
+    - import_tasks: tasks/iterm.yml
+      tags: ['iterm']
+
+    - import_tasks: tasks/dot-files.yml
+      tags: ['dot-files']
+
     - block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"

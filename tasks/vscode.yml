@@ -1,0 +1,16 @@
+---
+- name: Create config dir
+  ansible.builtin.file:
+    path: '~/Library/Application Support/Code/User'
+    state: directory
+    mode: '0755'
+
+- name: Copy vscode configuration
+  ansible.builtin.copy:
+    src: files/dotfiles/vscode
+    dest: '~/Library/Application Support/Code/User/settings.json'
+    mode: '0644'
+
+- name: Install vscode plugins
+  ansible.builtin.command: '/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension {{ item }}'
+  loop: "{{ vscode_extensions }}"

@@ -1,0 +1,6 @@
+[user]
+  name = Damián Gómez
+  email = damiangomezf@gmail.com
+
+[pull]
+  rebase = true
