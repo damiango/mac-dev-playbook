@@ -1,0 +1,74 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: false
+configure_terminal: false
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+- Mail
+- FaceTime
+- Podcasts
+- Mapas
+- TV
+- Numbers
+- Pages
+- Keynote
+dockitems_persist:
+- name: "iTerm"
+  path: "/Applications/iTerm.app/"
+  pos: 14
+- name: "WhatsApp"
+  path: "/Applications/WhatsApp.app/"
+  pos: 15
+- name: "Telegram"
+  path: "/Applications/Telegram.app/"
+  pos: 16
+
+homebrew_installed_packages:
+  - kubectx
+  - kubernetes-cli
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  # - iterm2
+  # - telegram
+  # - whatsapp
+  # - 1password
+  # - docker
+  # - google-chrome
+  # - visual-studio-code
+  - font-fira-code
+
+pip_packages:
+  - name: virtualenv
+    state: present
+
+vscode_extensions:
+  - hashicorp.terraform
+  - jdinhlife.gruvbox
+  - ms-azuretools.vscode-docker
+  - ms-dotnettools.csharp
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-ossdata.vscode-postgresql
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - ms-toolsai.jupyter
+  - ms-toolsai.jupyter-keymap
+  - ms-toolsai.jupyter-renderers
+  - ms-vscode-remote.remote-containers
+  - ms-vscode-remote.remote-ssh
+  - ms-vscode-remote.remote-ssh-edit
+  - ms-vscode.cpptools
+  - oderwat.indent-rainbow
+  - redhat.vscode-yaml
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
