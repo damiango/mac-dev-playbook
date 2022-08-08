@@ -7,7 +7,7 @@
 - name: Install oh-my-zsh
   ansible.builtin.shell:
     cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  when: omzsh.stat.exists
+  when: not omzsh.stat.exists
 
 - name: Configure oh-my-zsh plugins
   ansible.builtin.lineinfile:
@@ -23,6 +23,7 @@
       export PATH=$PATH:/usr/local/bin/google-cloud-sdk/bin
       export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/
       export ANSIBLE_HOST_KEY_CHECKING=False
+      export PATH=$PATH:/opt/homebrew/bin
       PROMPT=$PROMPT'$(kube_ps1) '
       alias python="python3"
       alias pip="pip3"
