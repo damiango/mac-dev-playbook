@@ -17,19 +17,30 @@ dockitems_remove:
 - Pages
 - Keynote
 dockitems_persist:
+- name: "Obsidian"
+  path: "/Applications/Obsidian.app/"
+  pos: 10
 - name: "iTerm"
   path: "/Applications/iTerm.app/"
   pos: 14
 - name: "WhatsApp"
   path: "/Applications/WhatsApp.app/"
   pos: 15
-- name: "Telegram"
-  path: "/Applications/Telegram.app/"
+- name: "Money Pro"
+  path: "/Applications/Money Pro.app/"
   pos: 16
+- name: "Pixelmator Pro"
+  path: "/Applications/Pixelmator Pro.app/"
+  pos: 17
 
 homebrew_installed_packages:
   - kubectx
   - kubernetes-cli
+  - jq
+  - tmux
+  - starship
+  - terraform
+  - 
 
 homebrew_taps:
   - homebrew/core
@@ -39,12 +50,14 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # - iterm2
-  # - telegram
   # - whatsapp
   # - 1password
   # - docker
   # - google-chrome
   # - visual-studio-code
+  # - Obsidian
+  # - Pixelmator pro
+  # - Money Pro
   - font-fira-code
 
 pip_packages:
@@ -60,6 +73,7 @@ vscode_extensions:
   - ms-ossdata.vscode-postgresql
   - ms-python.python
   - ms-python.vscode-pylance
+  - ms-python.isort
   - ms-toolsai.jupyter
   - ms-toolsai.jupyter-keymap
   - ms-toolsai.jupyter-renderers
@@ -69,6 +83,7 @@ vscode_extensions:
   - ms-vscode.cpptools
   - oderwat.indent-rainbow
   - redhat.vscode-yaml
-
+  - catppuccin.catppuccin-vsc
+  - esbenp.prettier-vscode
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

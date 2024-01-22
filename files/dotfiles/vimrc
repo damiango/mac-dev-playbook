@@ -34,7 +34,8 @@ set nostartofline
 set ruler
 
 " Show the current mode
-set showmode
+"set showmode
+set noshowmode
 " Show the filename in the window titlebar
 set title
 " Show the (partial) command as it’s being typed
@@ -58,14 +59,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'catppuccin/vim', { 'as': 'catppuccin'  }
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
-let g:airline_theme='gruvbox'
+"colorscheme gruvbox
+"set background=dark
+"let g:airline_theme='gruvbox'
+colorscheme catppuccin_macchiato
+let g:lightline = {'colorscheme': 'catppuccin_macchiato'}
 
 if(has("termguicolors"))
   set termguicolors
